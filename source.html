@@ -2,19 +2,19 @@
 <html lang="en" dir="ltr">
   <head>
       <meta charset="utf-8">
+      <script src="myscript.js"></script>
       <link rel="stylesheet" href="assets/css/style.css">
       <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Montserrat:400,700&display=swap&subset=cyrillic"
       rel="stylesheet">
-      <script src="myscript.js"></script>
   </head>
-  <body>
+  <body onload="generateCaptcha()">
 
     <header class="header">
         <div class="container">
             <div class="header_inner">
                 <div class="logo">
                     <nav class="nav" id="nav">
-                        <a class="nav_link" href="#About">About</a>
+                        <a class="nav_link" href="#About" >About</a>
                         <a class="nav_link" href="#Skills">Skills</a>
                         <a class="nav_link" href="#Projects">Projects</a>
                         <a class="nav_link" href="#Contact">Contact me</a>
@@ -118,15 +118,48 @@
 <section class="contact" id="Contact">
     <div class="contact_me">
         <h2 class="section_title">Contact Me</h2>
-        <div class="section_text">
+        <div class="contact_text">
             <p>Please send me an email if u have any questions or if u
             want to send a feedback! I'm always open for any suggestions.</p>
         </div>
+
     </div>
-        
+
+      <!-- Form to send -->
+      <form name="form1" id="form1">
+        <div>
+          <pid="formPrgh">Your Name:</p>
+          <input type="text" name="userN" placeholder="Enter Your Name">
+          <p class="formPrgh">Your Email:</p>
+          <input type="text" name="userE" placeholder="Enter Your Email">
+          <br><br>
+          <input id="butt"type="button" name="button" value="SEND" onclick="newPage()">
+        </div>
+        <div>
+          <p id="formPrgh">Input Your text here:</p>
+          <textarea id="texArea" wrap="off" cols="50" rows="10">
+
+          </textarea>
+      </div>
+
+        <div>
+          <input type="checkbox" id="ChBox" disabled> I'm not a robot
+          <br><br>
+          <div class="capcha_block">
+
+            <input type="text" id="captcha" size="7" disabled/><br/><br/>
+            <input type="text" id="inputText"/><br/><br/>
+            <button onclick="generateCaptcha()">Refresh</button>
+            <button onclick="check()">Submit</button>
+          </div>
+
+        </div>
+
+
+      </form>
+
 
 </section>
-
 
   </body>
 </html>
